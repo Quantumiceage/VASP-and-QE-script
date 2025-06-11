@@ -13,4 +13,6 @@ The getTKCOHP.py and getbσKCOHP.py scripts are used to sum the data in the file
 The getcohpfile.py is used to generate Lobster's input file lobsterin。It is not recommended to use it here, as it is more convenient to use the existing lobsterin file directly.
 The getdistanceinf.py is a script that extracts atomic positions from POSCAR
 
+The QEtoolkit-2.sh is the script that generates the QE input file. This script was reproduced by me from the following URL.
+http://bbs.keinsci.com/forum.php?mod=viewthread&tid=28755&highlight=QEtoolkit
 
