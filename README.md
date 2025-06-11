@@ -1,4 +1,4 @@
-# VASP-and-QE-script
+# VASP and QE script
 Here are some scripts for VASP and QE calculations.
 
 Gnuplot is required to use the scripts in the gnuplot folder, please make sure you have Gnuplot installed on your supercomputer or server,
@@ -17,4 +17,6 @@ The getdistanceinf.py is a script that extracts atomic positions from POSCAR
 
 The QEtoolkit-2.sh is the script that generates the QE input file. This script was reproduced by me from the following URL.
 http://bbs.keinsci.com/forum.php?mod=viewthread&tid=28755&highlight=QEtoolkit
+
+The plotKCOHP-bubble.sh and plotKCOHP-color.sh are scripts used to draw k-dependence COHP files processed by getKspaceCOHP.x .
 
