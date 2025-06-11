@@ -1,0 +1,20 @@
+set terminal pdfcairo enhanced color size 5,6 linewidth 3 font "Times, 28"
+set output "cohp.pdf"
+set key top right
+
+set ylabel "Energy (eV)" font "Times, 24"
+set yrange [-10:10]; 
+set ytics -10,2,10 scale 0.5 font "Times, 24"
+
+set xlabel "-COHP " font "Times, 26" 
+set xrange [-1:1.5]; 
+set xtics -1,1,1.5 scale 0.5 font "Times, 24"
+
+set lmargin at screen 0.20
+set rmargin at screen 0.90
+set tmargin at screen 0.90
+set bmargin at screen 0.20
+set arrow 1 from -1, 0 to 1.5, 0 linestyle 0 linecolor '#000000' linewidth 1 nohead
+set arrow 2 from 0, -10 to 0, 10 linestyle 0 linecolor '#000000' linewidth 1 nohead
+plot "COHPCAR.lobster" using (-$2):1 with lines title "B-B" 
+set output

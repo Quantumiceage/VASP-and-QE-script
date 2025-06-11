@@ -1,0 +1,44 @@
+set terminal pngcairo enhanced linewidth 3 font "Times,14" size 1600,1200
+set output 'band_dos.png'
+
+# 多图布局
+set multiplot layout 1,2
+
+# 设置能带图参数
+set xlabel "Wave Vector"
+set xrange [0:8.553]
+set xtics 0,2,8.553 scale 0.5
+set xtics ("GAMMA" 0.000, "M" 1.320, "K" 2.081, "GAMMA" 3.605, "A" 4.053, "L" 5.372, "H" 6.134, "A|L" 7.658, "M|H" 8.105, "K" 8.553) font "Times, 16" scale 0.5
+
+set ylabel "Energy (eV)"
+set yrange [-9:10]  
+set ytics -9,2,10 scale 0.5
+#unset xtics  # 隐藏默认的x轴刻度
+
+set arrow 1 from 0, 0 to 8.553, 0 linestyle 0 linecolor '#000000' linewidth 1 nohead
+
+set lmargin at screen 0.10
+set rmargin at screen 0.54
+set tmargin at screen 0.90
+set bmargin at screen 0.20
+unset key
+plot for [i=2:25] "BAND.dat" using 1:i with lines linewidth 2 
+
+#dos
+#set ylabel "Energy (eV)"; 
+set yrange [-9:10]; 
+set ytics ('' -7,'' -5,'' -3,'' 0,'' 3,'' 5,'' 7) scale 0.5
+unset ylabel
+set xlabel "Density of states (1/eV)"; 
+set xrange [0:5]; 
+set xtics 0,1,5 scale 0.5
+
+set lmargin at screen 0.56
+set rmargin at screen 0.96
+set tmargin at screen 0.90
+set bmargin at screen 0.20
+set arrow 1 from 0,0 to 40,0 linestyle 0 linecolor '#000000' linewidth 1 nohead
+plot "TDOS.dat" using 2:1 with lines title "tDos"
+
+unset multiplot
+set output
