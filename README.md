@@ -8,4 +8,6 @@ where the input file of script plotband、plotdos、plotpdos and plot-band+dos i
 In folder pythonscript:
 The extract_vectors_phonopy.py script  is used to extract the vibration patterns of phonons.
 Usage:First, use the Vesta software to convert POSCAR into a POSCAR.vesta file.Then use the command：python extract_vectors_phonopy.py 
-The fband-generate.py script is used to generate a KPOINTS file that is used to calculate the fatband file in lobster.If you can't build once, be sure to use the script twice
+The fband-generate.py script is used to generate a KPOINTS file that is used to calculate the fatband file in lobster.And if you can't build once, be sure to use the script twice.Note: To use this script, make sure you have pymatgen present on your computer
+
+
